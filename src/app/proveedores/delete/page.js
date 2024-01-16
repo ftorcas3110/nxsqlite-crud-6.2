@@ -1,13 +1,14 @@
-import FormProveedores from "@/components/FormProveedores"
-import { db } from "@/lib/mysql"
+import Form from "@/components/Form"
+import db  from "@/lib/sqlite"
 import { deleteProveedor } from "@/lib/actions"
 
 async function page({ searchParams }) {
-  const [proveedor] = await db.query('select * from proveedores where id = ?', [searchParams.id]);
+  const [proveedor] = await db.all('select * from proveedors where id = ?', [searchParams.id]);
+  console.log(proveedor);
   return (
     <div>
-      <h3>Eliminar proveedor {searchParams.id}</h3>
-      <FormProveedores action={deleteProveedor} title='Eliminar proveedor' proveedor={proveedor} disabled={true} />
+      <h3>Eliminar artículo {searchParams.id}</h3>
+      <Form action={deleteProveedor} title='Eliminar artículo' proveedor={proveedor} disabled={true} />
     </div>
   )
 }
