@@ -7,6 +7,8 @@ export default async function Home() {
       <h1>Página de inicio</h1>
       <hr />
       <Link href={"/articulos"}>Listado de artículos</Link>
+      <br/>
+      <Link href={"/proveedores"}>Listado de proveedores</Link>
     </section>
   )
 }
