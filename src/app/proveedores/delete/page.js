@@ -3,7 +3,7 @@ import db  from "@/lib/sqlite"
 import { deleteProveedor } from "@/lib/actions"
 
 async function page({ searchParams }) {
-  const [proveedor] = await db.all('select * from proveedors where id = ?', [searchParams.id]);
+  const [proveedor] = await db.all('select * from proveedores where id = ?', [searchParams.id]);
   console.log(proveedor);
   return (
     <div>
